@@ -3,7 +3,7 @@ Kaggle Denoising Dirty Documents
 
 ## Model
 
-Deep Convolutional Network imspired by SRCNN and NIN
+Deep Convolutional Network
 
 |Layer Type|#Input Channel|#Ouput Channel|FilterSize|Padding|
 |:--:|:--:|:--:|:--:|:--:|
