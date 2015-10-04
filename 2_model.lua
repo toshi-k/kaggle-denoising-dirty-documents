@@ -36,14 +36,15 @@ function newmodel()
 	model:add(nn.SpatialConvolutionMM(nstates[2], nstates[3], filtsize, filtsize, 1, 1, 1))
 	model:add(nn.LReLU(0.1))
 
-	-- stage 5 : Convolution
+	-- stage 4 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[3], nstates[4], 1, 1, 1))
 	model:add(nn.LReLU(0.1))
 
-	-- stage 6 : Convolution
+	-- stage 5 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[4], nstates[5], filtsize, filtsize, 1, 1, 1))
 	model:add(nn.LReLU(0.1))
 
+	-- stage 6 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[5], 1, filtsize, filtsize, 1, 1, 1))
 
 	model:add(nn.LReLU(0.001))
