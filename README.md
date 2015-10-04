@@ -1,9 +1,12 @@
 Kaggle Denoising Dirty Documents
 ====
 
+My solution in this Kaggle competition ["Denoising Dirty Documents"](https://www.kaggle.com/c/denoising-dirty-documents).
+
+
 ## Model
 
-Deep Convolutional Network
+Deep Convolutional Neural Network
 
 |Layer Type|#Input Channel|#Ouput Channel|FilterSize|Padding|
 |:--:|:--:|:--:|:--:|:--:|
@@ -20,3 +23,11 @@ Deep Convolutional Network
 |Leaky ReLU|96|96|-|-|
 |Convolution(6)|96|1|3|1|
 |Output|1|-|-|-|
+
+## Sample
+
+Test Input<br>
+![sample_test_input](https://raw.githubusercontent.com/toshi-k/Kaggle-Denoising-Dirty-Documents/master/sample/test_input.png)
+
+Test Output<br>
+![sample_test_output](https://raw.githubusercontent.com/toshi-k/Kaggle-Denoising-Dirty-Documents/master/sample/test_output.png)
