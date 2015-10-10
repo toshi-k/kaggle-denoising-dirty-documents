@@ -1,7 +1,7 @@
 Kaggle Denoising Dirty Documents
 ====
 
-My solution in this Kaggle competition ["Denoising Dirty Documents"](https://www.kaggle.com/c/denoising-dirty-documents).
+My solution in this Kaggle competition ["Denoising Dirty Documents"](https://www.kaggle.com/c/denoising-dirty-documents) (6th place).
 
 
 ## Model
