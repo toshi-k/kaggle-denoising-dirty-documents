@@ -58,7 +58,7 @@ function test()
 		test_cleaned_data[{{t,}}] = pred:float()
 	end
 
-	local testimg_names = getFilename("../../dataset/test/")
+	local testimg_names = getFilename("dataset/test/")
 
 	os.execute('mkdir -p ' .. opt.path_saveimg)
 	test_cleaned_images = patch2img(test_cleaned_data, test_images)
