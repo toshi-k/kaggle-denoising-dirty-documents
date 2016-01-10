@@ -6,8 +6,6 @@ require 'image'
 require 'nn'
 require 'cunn'
 
-require 'lib/LReLU'
-
 ---------- functions ----------
 
 function newmodel()
@@ -26,31 +24,31 @@ function newmodel()
 
 	-- stage 1 : Convolution
 	model:add(nn.SpatialConvolutionMM(nfeats, nstates[1], filtsize, filtsize, 1, 1, 1))
-	model:add(nn.LReLU(0.1))
+	model:add(nn.LeakyReLU(0.1))
 
 	-- stage 2 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[1], nstates[2], 1, 1, 1))
-	model:add(nn.LReLU(0.1))
+	model:add(nn.LeakyReLU(0.1))
 
 	-- stage 3 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[2], nstates[3], filtsize, filtsize, 1, 1, 1))
-	model:add(nn.LReLU(0.1))
+	model:add(nn.LeakyReLU(0.1))
 
 	-- stage 4 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[3], nstates[4], 1, 1, 1))
-	model:add(nn.LReLU(0.1))
+	model:add(nn.LeakyReLU(0.1))
 
 	-- stage 5 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[4], nstates[5], filtsize, filtsize, 1, 1, 1))
-	model:add(nn.LReLU(0.1))
+	model:add(nn.LeakyReLU(0.1))
 
 	-- stage 6 : Convolution
 	model:add(nn.SpatialConvolutionMM(nstates[5], 1, filtsize, filtsize, 1, 1, 1))
 
-	model:add(nn.LReLU(0.001))
+	model:add(nn.LeakyReLU(0.001))
 	model:add(nn.AddConstant(-1,true))
 	model:add(nn.MulConstant(-1,true))
-	model:add(nn.LReLU(0.001))
+	model:add(nn.LeakyReLU(0.001))
 	model:add(nn.MulConstant(-1,true))
 	model:add(nn.AddConstant(1,true))
 
