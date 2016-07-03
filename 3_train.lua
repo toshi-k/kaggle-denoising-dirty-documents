@@ -40,6 +40,9 @@ function train()
 	shuffle = torch.randperm(train_nrow)
 	local mse_loss = 0
 
+	local view = nn.View(-1)
+	view:cuda()
+
 	-- do one epoch
 	print('==> doing epoch on training data:')
 	print("==> online epoch # " .. epoch .. ' [batchSize = ' .. opt.batchSize .. ']')
@@ -80,7 +83,7 @@ function train()
 			for i = 1,#inputs do
 				-- estimate f
 				local output = model:forward(inputs[i])
-				local output_view = nn.View(patch_size^2):forward(output)
+				local output_view = view:forward(output)
 				local err = criterion:forward(output_view, targets[i])
 				mse_loss = mse_loss + err
 
