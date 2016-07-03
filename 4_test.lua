@@ -11,9 +11,9 @@ function gen_submission(cleaned_images, img_names)
 	print("=> Save Submission File")
 
 	local valid_score = valid_score or 0
-	local path = "submission/submission_valid" .. string.format("%.4f", valid_score) .. ".csv"
-	os.execute('mkdir -p ' .. sys.dirname(path))
-	local fp = io.open(path, "w")
+	local submission_filepath = "submission/submission_valid" .. string.format("%.4f", valid_score) .. ".csv"
+	path.mkdir(sys.dirname(submission_filepath))
+	local fp = io.open(submission_filepath, "w")
 
 	fp:write("id,value\n")
 
@@ -60,7 +60,7 @@ function test()
 
 	local testimg_names = getFilename("dataset/test/")
 
-	os.execute('mkdir -p ' .. opt.path_saveimg)
+	path.mkdir(opt.path_saveimg)
 	test_cleaned_images = patch2img(test_cleaned_data, test_images)
 	for i = 1,#test_cleaned_images do
 		local testimg_id = testimg_names[i]

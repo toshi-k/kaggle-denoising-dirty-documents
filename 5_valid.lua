@@ -30,7 +30,7 @@ function valid()
 		valid_cleaned_data[{{t,}}] = pred:float()
 	end
 
-	os.execute('mkdir -p ' .. opt.path_saveimg)
+	path.mkdir(opt.path_saveimg)
 	valid_cleaned_images_pred = patch2img(valid_cleaned_data, valid_images)
 	for i = 1,#valid_cleaned_images_pred do
 		image.save("save/valid_cleaned_images_" .. i .. ".png", valid_cleaned_images_pred[i])
