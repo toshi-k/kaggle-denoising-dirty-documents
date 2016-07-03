@@ -113,7 +113,7 @@ function train()
 	local filename = paths.concat(opt.path_models, 'model.net')
 	path.mkdir(sys.dirname(filename))
 	print('=> saving model to '..filename)
-	torch.save(filename, model)
+	torch.save(filename, model:clearState())
 
 	-- next epoch
 	epoch = epoch + 1
